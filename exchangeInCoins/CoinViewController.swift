@@ -16,7 +16,6 @@ class CoinViewController: UIViewController {
     //Labels das moedas
     @IBOutlet weak var labelUmReal: UILabel!
     @IBOutlet weak var labelCinquentaCentavos: UILabel!
-    //@IBOutlet weak var labelVinteCintoCentavos: UILabel!
     
     @IBOutlet weak var labelVinteCintoCentavos: UILabel!
     
@@ -35,7 +34,7 @@ class CoinViewController: UIViewController {
            
         labelUmReal.text = "Moedas de um real: \(umReal)"
         labelCinquentaCentavos.text = "Moedas de cinquenta centavos: \(cinquenta)"
-       /* labelVinteCintoCentavos.text = "Moedas de vinte e cinco centavos: \(vinteECinco)" */
+        labelVinteCintoCentavos.text = "Moedas de vinte e cinco: \(vinteECinco)"
         labelDezCentavos.text = "Moedas de dez centavos: \(dez)"
         labelCincoCentavos.text = "Moedas de cinco centavos: \(cinco)"
         labelUmCentavo.text = "Moedas de um centavo: \(um)"
