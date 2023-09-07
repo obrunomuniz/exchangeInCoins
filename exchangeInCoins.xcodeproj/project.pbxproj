@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B003DCD2AAA250E006DD37A /* CoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B003DCC2AAA250E006DD37A /* CoinViewController.swift */; };
 		4B0523522AA9546400C7A8EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0523512AA9546400C7A8EE /* AppDelegate.swift */; };
 		4B0523542AA9546400C7A8EE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0523532AA9546400C7A8EE /* SceneDelegate.swift */; };
 		4B0523562AA9546400C7A8EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0523552AA9546400C7A8EE /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B003DCC2AAA250E006DD37A /* CoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinViewController.swift; sourceTree = "<group>"; };
 		4B05234E2AA9546400C7A8EE /* exchangeInCoins.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = exchangeInCoins.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B0523512AA9546400C7A8EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4B0523532AA9546400C7A8EE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				4B05235A2AA9546500C7A8EE /* Assets.xcassets */,
 				4B05235C2AA9546500C7A8EE /* LaunchScreen.storyboard */,
 				4B05235F2AA9546500C7A8EE /* Info.plist */,
+				4B003DCC2AAA250E006DD37A /* CoinViewController.swift */,
 			);
 			path = exchangeInCoins;
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 				4B0523562AA9546400C7A8EE /* ViewController.swift in Sources */,
 				4B0523522AA9546400C7A8EE /* AppDelegate.swift in Sources */,
 				4B0523542AA9546400C7A8EE /* SceneDelegate.swift in Sources */,
+				4B003DCD2AAA250E006DD37A /* CoinViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
