@@ -54,10 +54,25 @@ class CoinViewController: UIViewController {
         labelUmCentavo.text = "Moedas de um centavo: \(resultado.moedasUm)"
     }
     
-    
+    /**
+      Retorna uma tupla contendo 7
+      @params centavos do tipo inteiro
+     */
     func calcularTroco(centavos: Int) -> (totalMoedas: Int, moedasUmReal: Int, moedasCinquenta: Int, moedasVinteECinco: Int, moedasDez: Int, moedasCinco: Int, moedasUm: Int) {
+       
+        /**
+         Inicializada com o valor do parâmetro
+         Essa variável vai ajudar a determinar quantas moedas de cada tipo
+         são necessárias e qual será o valor restante depois que essas
+         moedas forem contabilizadas.
+         */
         var restante = centavos
         
+        /**
+         Determina quantas moedas de 1 real são necessárias
+         Divida o valor por 100 pois 1 real é igual a 100 centavos
+         Logo em seguida atualizamos o valor restante retirando os centavos já convertidos em moedas de um real
+         */
         let moedasUmReal = restante / 100
         restante %= 100
         
@@ -73,8 +88,15 @@ class CoinViewController: UIViewController {
         let moedasCinco = restante / 5
         restante %= 5
         
+        /*
+         O valor restante depois de todas as operações
+         será as moedas de um centavo necessárias.
+         */
         let moedasUm = restante
 
+        /*
+         Soma de todas as moedas calculadas
+         */
         let totalMoedas = moedasUmReal + moedasCinquenta + moedasVinteECinco + moedasDez + moedasCinco + moedasUm
         
         return (totalMoedas, moedasUmReal, moedasCinquenta, moedasVinteECinco, moedasDez, moedasCinco, moedasUm)
