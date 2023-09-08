@@ -89,6 +89,11 @@ class CoinViewController: UIViewController {
     func configurarLayout() {
         //navigationItem.hidesBackButton = true
         botaoCalcular.layer.cornerRadius = 12.0
+        entradaCentavos.keyboardType = .numberPad
+        
+        let attributedPlaceholder = NSAttributedString(string: "Digite os centavos", attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
+        entradaCentavos.attributedPlaceholder = attributedPlaceholder
+        
     }
     
     override func viewDidLoad() {
