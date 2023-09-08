@@ -30,7 +30,14 @@ class CoinViewController: UIViewController {
     //fuc usada para fazer o calculo quando clica no botao Calcular
     @IBAction func calcular(_ sender: Any) {
         guard let textoCentavos = entradaCentavos.text, let centavos = Int(textoCentavos) else {
-            // TODO: mostrar um alerta aqui para entrada inválida
+            showAlert(message: "Por favor, insira um número válido.")
+            return
+        }
+        
+        // Verifica se o valor está dentro do intervalo permitido
+        if centavos < 0 || centavos > 10000 {
+            // Mostra um alerta para entrada fora do intervalo permitido
+            showAlert(message: "O valor deve estar entre 0 e 10.000 centavos.")
             return
         }
         
@@ -72,9 +79,13 @@ class CoinViewController: UIViewController {
         
         return (totalMoedas, moedasUmReal, moedasCinquenta, moedasVinteECinco, moedasDez, moedasCinco, moedasUm)
     }
-
-
     
+    func showAlert(message: String) {
+        let alert = UIAlertController(title: "Erro", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+
     func configurarLayout() {
         //navigationItem.hidesBackButton = true
         botaoCalcular.layer.cornerRadius = 12.0
