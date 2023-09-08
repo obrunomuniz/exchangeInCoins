@@ -25,38 +25,59 @@ class CoinViewController: UIViewController {
     
     @IBOutlet weak var labelUmCentavo: UILabel!
 
+    @IBOutlet weak var totalMoedasLabel: UILabel!
     
     //fuc usada para fazer o calculo quando clica no botao Calcular
     @IBAction func calcular(_ sender: Any) {
-        guard let texto = entradaCentavos.text, let centavos = Int(texto) else { return }
-
-           let (umReal, cinquenta, vinteECinco, dez, cinco, um) = calcularTroco(centavos: centavos)
-           
-        labelUmReal.text = "Moedas de um real: \(umReal)"
-        labelCinquentaCentavos.text = "Moedas de cinquenta centavos: \(cinquenta)"
-        labelVinteCintoCentavos.text = "Moedas de vinte e cinco: \(vinteECinco)"
-        labelDezCentavos.text = "Moedas de dez centavos: \(dez)"
-        labelCincoCentavos.text = "Moedas de cinco centavos: \(cinco)"
-        labelUmCentavo.text = "Moedas de um centavo: \(um)"
+        guard let textoCentavos = entradaCentavos.text, let centavos = Int(textoCentavos) else {
+            // TODO: mostrar um alerta aqui para entrada inválida
+            return
+        }
         
+        let resultado = calcularTroco(centavos: centavos)
+        
+        print(resultado)
+        
+        totalMoedasLabel.text = "Quantidade de moedas: \(resultado.totalMoedas)"
+        labelUmReal.text = "Moedas de um real: \(resultado.moedasUmReal)"
+        labelCinquentaCentavos.text = "Moedas de cinquenta centavos: \(resultado.moedasCinquenta)"
+        labelVinteCintoCentavos.text = "Moedas de vinte e cinco: \(resultado.moedasVinteECinco)"
+        labelDezCentavos.text = "Moedas de dez centavos: \(resultado.moedasDez)"
+        labelCincoCentavos.text = "Moedas de cinco centavos: \(resultado.moedasCinco)"
+        labelUmCentavo.text = "Moedas de um centavo: \(resultado.moedasUm)"
     }
+    
+    
+    func calcularTroco(centavos: Int) -> (totalMoedas: Int, moedasUmReal: Int, moedasCinquenta: Int, moedasVinteECinco: Int, moedasDez: Int, moedasCinco: Int, moedasUm: Int) {
+        var restante = centavos
+        
+        let moedasUmReal = restante / 100
+        restante %= 100
+        
+        let moedasCinquenta = restante / 50
+        restante %= 50
+        
+        let moedasVinteECinco = restante / 25
+        restante %= 25
+        
+        let moedasDez = restante / 10
+        restante %= 10
+        
+        let moedasCinco = restante / 5
+        restante %= 5
+        
+        let moedasUm = restante
+
+        let totalMoedas = moedasUmReal + moedasCinquenta + moedasVinteECinco + moedasDez + moedasCinco + moedasUm
+        
+        return (totalMoedas, moedasUmReal, moedasCinquenta, moedasVinteECinco, moedasDez, moedasCinco, moedasUm)
+    }
+
+
     
     func configurarLayout() {
         //navigationItem.hidesBackButton = true
         botaoCalcular.layer.cornerRadius = 12.0
-    }
-    
-    func calcularTroco(centavos: Int) -> (Int, Int, Int, Int, Int, Int) {
-        
-        //Obter os valores de cada moeda
-        let moedasUmReal = centavos / 100
-        let moedasCinquenta = (centavos % 100) / 50
-        let moedasVinteECinco = (centavos % 50) / 25
-        let moedasDez = (centavos % 25) / 10
-        let moedasCinco = (centavos % 10) / 5
-        let moedasUm = centavos % 5
-        
-        return (moedasUmReal, moedasCinquenta, moedasVinteECinco, moedasDez, moedasCinco, moedasUm)
     }
     
     override func viewDidLoad() {
