@@ -66,10 +66,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dvZ-tD-mOW">
-                                <rect key="frame" x="64" y="307" width="265" height="62"/>
+                                <rect key="frame" x="64" y="307" width="265" height="120"/>
                                 <color key="backgroundColor" red="0.4549019608" green="0.1960784314" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="62" id="GlP-gj-Ddf"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="62" id="KoF-ZU-v6m"/>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="62" id="tLz-X7-Fja"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="62" id="zAf-EM-AHM"/>
                                 </constraints>

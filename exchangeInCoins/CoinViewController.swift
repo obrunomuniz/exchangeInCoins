@@ -9,7 +9,9 @@ import UIKit
 
 class CoinViewController: UIViewController {
 
-    //Propriedads do meu botao de calcular e do input de entrada dos centavos
+    /**
+     Propriedads do meu botao de calcular e do input de entrada dos centavos
+    */
     @IBOutlet weak var botaoCalcular: UIButton!
     @IBOutlet weak var entradaCentavos: UITextField!
     
@@ -27,14 +29,19 @@ class CoinViewController: UIViewController {
 
     @IBOutlet weak var totalMoedasLabel: UILabel!
     
-    //fuc usada para fazer o calculo quando clica no botao Calcular
     @IBAction func calcular(_ sender: Any) {
+        
+        /**
+         Verifica se é possível obter um texto do campo entradaCentavos e, posteriormente, converter esse texto em um número inteiro
+         */
         guard let textoCentavos = entradaCentavos.text, let centavos = Int(textoCentavos) else {
             showAlert(message: "Por favor, insira um número válido.")
             return
         }
         
-        // Verifica se o valor está dentro do intervalo permitido
+        /**
+         Verifica se o valor está dentro do intervalo permitido
+         */
         if centavos < 0 || centavos > 10000 {
             // Mostra um alerta para entrada fora do intervalo permitido
             showAlert(message: "O valor deve estar entre 0 e 10.000 centavos.")
